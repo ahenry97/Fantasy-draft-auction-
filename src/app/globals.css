@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #f0f1f4;
+  --foreground: #14161b;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #16a34a;
+  --accent-foreground: #ffffff;
+  --danger: #dc2626;
+  --warning: #d97706;
+  --winning: #16a34a;
+  --outbid: #dc2626;
+}
+
+.dark {
+  --background: #0b0d12;
+  --surface: #14161d;
+  --surface-2: #1b1e27;
+  --foreground: #f3f4f6;
+  --muted: #9aa0ac;
+  --border: #262a35;
+  --accent: #22c55e;
+  --accent-foreground: #06210f;
+  --danger: #f87171;
+  --warning: #fbbf24;
+  --winning: #22c55e;
+  --outbid: #f87171;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-winning: var(--winning);
+  --color-outbid: var(--outbid);
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 160ms ease-out;
+}
+
+@keyframes flash-update {
+  0% {
+    background-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.animate-flash {
+  animation: flash-update 900ms ease-out;
+}
