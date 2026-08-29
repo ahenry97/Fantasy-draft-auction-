@@ -17,8 +17,8 @@ port = 54323
 
 [auth]
 enabled = true
-site_url = "http://localhost:3000"
-additional_redirect_urls = ["http://localhost:3000"]
+site_url = "https://fantasy-draft-auction.vercel.app"
+additional_redirect_urls = ["http://localhost:3000", "https://fantasy-draft-auction.vercel.app", "https://fantasy-draft-auction.vercel.app/**", "https://fantasy-draft-auction-*-aaron-henrys-projects-10fcd068.vercel.app/**"]
 jwt_expiry = 3600
 enable_signup = true
 
